@@ -37,7 +37,7 @@ module.exports = {
     networks: {
       hardhat: {},
       sepolia: {
-        url: "https://sepolia.rpc.thirdweb.com",
+        url: "https://eth-sepolia.g.alchemy.com/v2/EZzyb0YACmYqP7EzgKycVhZ9L3cOAJUP",
         accounts: [`0x${process.env.PRIVATE_KEY}`],
       },
     },

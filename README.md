@@ -1,6 +1,6 @@
-# Blockchain-based crowdfunding platform: `FundVerse`
+# Blockchain-based crowdfunding platform: `FundHive`
 
-**FundVerse** is a blockchain-based decentralized platform that combines social interactions with crowdfunding mechanisms, allowing any user to raise funds while becoming popular in the social network. Being **built over the Ethereum blockchain**, FundVerse is structured as a Decentralized Application **(DApp)**, that fosters crowdfunding without the intervention of any central authority,and recognizes the active role of donors, enabling them to support artists or projects as well as humanity use cases.
+**FundHive** is a blockchain-based decentralized platform that combines social interactions with crowdfunding mechanisms, allowing any user to raise funds while becoming popular in the social network. Being **built over the Ethereum blockchain**, FundHive is structured as a Decentralized Application **(DApp)**, that fosters crowdfunding without the intervention of any central authority,and recognizes the active role of donors, enabling them to support artists or projects as well as humanity use cases.
 
 
 ## Why blockchain based crowdfunding?
@@ -34,7 +34,7 @@ To Install and run this Blockchain based crowdfunding platform locally, one must
 
 **Clone the repository:**
 
-         https://github.com/thekiranmahajan/FundVerse.git
+         https://github.com/thekiranmahajan/FundHive.git
 
 **Navigate to the web3 repository:**
 

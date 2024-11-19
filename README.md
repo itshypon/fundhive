@@ -34,7 +34,7 @@ To Install and run this Blockchain based crowdfunding platform locally, one must
 
 **Clone the repository:**
 
-         https://github.com/thekiranmahajan/FundHive.git
+         https://github.com/itshypon/fundhive.git
 
 **Navigate to the web3 repository:**
 
@@ -73,8 +73,3 @@ To use this DApp user must have an extension called [Metamask](https://metamask.
 ## Credits:
 
 https://github.com/adrianhajdin/project_crowdfunding
-
-## Contributor:
-
-1.	https://github.com/thekiranmahajan
-2.	https://github.com/thesakshijaiswal

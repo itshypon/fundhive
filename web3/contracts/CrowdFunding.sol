@@ -82,13 +82,8 @@ contract CrowdFunding {
 
     function updateCampaign(
         uint256 _id,
-        string memory _name,
-        string memory _title,
-        string memory _category,
-        string memory _description,
         uint256 _target,
         uint256 _deadline,
-        string memory _image
     ) public authorisedPerson(_id) returns (bool) {
         Campaign storage campaign = campaigns[_id];
 
@@ -99,13 +94,9 @@ contract CrowdFunding {
         require(_target > 0, "Target amount must be greater than zero");
         require(campaign.owner != address(0), "Campaign does not exist");
 
-        campaign.name = _name;
-        campaign.title = _title;
-        campaign.category = _category;
-        campaign.description = _description;
+        //Updated Fields
         campaign.target = _target;
         campaign.deadline = _deadline;
-        campaign.image = _image;
 
         emit Action(_id, "Campaign updated", msg.sender, block.timestamp);
 

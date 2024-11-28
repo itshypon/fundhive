@@ -143,6 +143,7 @@ const UpdateCampaign = () => {
               placeholder="John Doe"
               inputType="text"
               value={form?.name}
+              isDisabled={true}
               handleChange={(e) => handleFormFieldChange("name", e)}
             />
 
@@ -151,6 +152,7 @@ const UpdateCampaign = () => {
               placeholder="Write a title"
               inputType="text"
               value={form?.title}
+              isDisabled={true}
               handleChange={(e) => handleFormFieldChange("title", e)}
             />
 
@@ -158,6 +160,7 @@ const UpdateCampaign = () => {
               labelName="Select Category *"
               isCategory
               value={form?.category}
+              isDisabled={true}
               handleChange={(e) => handleFormFieldChange("category", e)}
             />
           </div>
@@ -167,6 +170,7 @@ const UpdateCampaign = () => {
             placeholder="Write a your story"
             isTextArea
             value={form?.description}
+            isDisabled={true}
             handleChange={(e) => handleFormFieldChange("description", e)}
           />
 
@@ -204,6 +208,7 @@ const UpdateCampaign = () => {
             placeholder="Place image URL of your campaign"
             inputType="url"
             value={form?.image}
+            isDisabled={true}
             handleChange={(e) => handleFormFieldChange("image", e)}
           />
 

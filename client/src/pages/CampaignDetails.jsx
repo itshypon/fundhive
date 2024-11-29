@@ -84,7 +84,7 @@ const CampaignDetails = () => {
 
     try {
       await donate(campaign?.id, amount);
-      navigate("/");
+      navigate("/app");
     } catch (error) {
       console.error("Error donating:", error);
     } finally {
@@ -130,7 +130,7 @@ const CampaignDetails = () => {
     }
     await deleteCampaign(campaign?.id);
 
-    navigate("/");
+    navigate("/app");
     setIsLoading(false);
   };
   const remainingDays = daysLeft(campaign?.deadline);

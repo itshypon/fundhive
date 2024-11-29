@@ -46,7 +46,7 @@ const Withdraw = () => {
       return;
     } else {
       await withdraw(campaign?.id);
-      navigate("/");
+      navigate("/app");
     }
   };
   useEffect(() => {

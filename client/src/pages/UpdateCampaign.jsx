@@ -39,7 +39,7 @@ const UpdateCampaign = () => {
             theme: "dark",
           }
         );
-        navigate("/");
+        navigate("/app");
         return;
       }
       if (campaign) {
@@ -86,7 +86,7 @@ const UpdateCampaign = () => {
 
           setIsLoading(false);
           setIsUpdating(false);
-          navigate("/");
+          navigate("/app");
         } else {
           toast.warning(
             "Provide a valid image URL before submitting the form.",

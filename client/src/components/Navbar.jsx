@@ -81,7 +81,7 @@ const Navbar = () => {
       <div className="sm:hidden flex justify-between items-center relative">
         <div className="w-14 h-14 rounded-xl bg-[#f0f0f0] dark:bg-[#2c2f32] flex justify-center items-center cursor-pointer shadow-md">
           <NavLink
-            to="/"
+            to="/app"
             className="flex items-center justify-center h-full w-full"
           >
             <img src={logo} alt="Logo" className="w-4/5 h-4/5 object-contain" />

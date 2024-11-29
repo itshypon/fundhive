@@ -302,7 +302,7 @@ const CampaignDetails = () => {
       <div className="mt-16 mb-[30px]">
         {address == campaign?.owner && (
           <div className="flex flex-wrap justify-between gap-[40px]">
-            <Link to={`/update-campaign/${campaign?.id}`} className="w-[31%]">
+            <Link to={`/app/update-campaign/${campaign?.id}`} className="w-[31%]">
               <CustomButton
                 btnType="button"
                 id={campaign?.id}

@@ -216,7 +216,17 @@ const CampaignDetails = () => {
                   {campaign?.name} is organizing this fundraiser for{" "}
                   {campaign?.category} category.
                 </h4>
-                <p className="mt-[4px] font-epilogue font-normal text-[13px] text-[#4d4d4d] dark:text-[#808191] truncate">
+                <p
+                  className="mt-[4px] font-epilogue text-[13px] text-[#4d4d4d] dark:text-[#808191] truncate cursor-pointer hover:text-blue-600 dark:hover:text-blue-400 
+                  underline transition-colors duration-200 
+                  font-semibold"
+                  onClick={() =>
+                    window.open(
+                      `https://sepolia.etherscan.io/address/${campaign?.owner}`,
+                      "_blank"
+                    )
+                  }
+                >
                   {campaign?.owner}
                 </p>
               </div>
@@ -302,7 +312,10 @@ const CampaignDetails = () => {
       <div className="mt-16 mb-[30px]">
         {address == campaign?.owner && (
           <div className="flex flex-wrap justify-between gap-[40px]">
-            <Link to={`/app/update-campaign/${campaign?.id}`} className="w-[31%]">
+            <Link
+              to={`/app/update-campaign/${campaign?.id}`}
+              className="w-[31%]"
+            >
               <CustomButton
                 btnType="button"
                 id={campaign?.id}

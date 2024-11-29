@@ -65,7 +65,7 @@ const Navbar = () => {
           modalTitleIconUrl={logo}
           showThirdwebBranding={false}
         />
-        <NavLink to="/profile">
+        <NavLink to="/app/profile">
           <div className="w-[52px] h-[52px] rounded-full bg-[#f0f0f0] dark:bg-[#2c2f32] flex justify-center items-center cursor-pointer overflow-hidden shadow-md">
             <Jazzicon
               className="w-[60%] h-[60%] object-contain"

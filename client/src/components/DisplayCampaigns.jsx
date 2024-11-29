@@ -9,7 +9,7 @@ const DisplayCampaigns = ({ title, isLoading, campaigns }) => {
 
   const handleNavigateDetails = (campaign) => {
     console.log("campaigns from DisplayCampaigns", campaign);
-    navigate(`/campaign-details/${campaign.id}`);
+    navigate(`/app/campaign-details/${campaign.id}`);
   };
   return (
     <div>

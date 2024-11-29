@@ -8,7 +8,7 @@ import ThemeModes from "./ThemeModes";
 const Sidebar = () => {
   return (
     <div className="flex justify-between items-center flex-col sticky top-5 h-[93vh] select-none">
-      <NavLink to="/">
+      <NavLink to="/app">
         <Icon
           name="FundHive"
           styles="w-[52px] h-[52px] bg-[#f0f0f0] dark:bg-[#2c2f32] shadow-md "

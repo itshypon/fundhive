@@ -21,11 +21,17 @@ import {
   Profile,
   UpdateCampaign,
   Withdraw,
+  
 } from "./pages";
 
+import LandingPage from "./pages/LandingPage";
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/", // Redirect to /landing by default
+    element: <LandingPage />,
+  },
+  {
+    path: "/app",
     element: <App />,
     children: [
       {
@@ -33,27 +39,27 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "/profile",
+        path: "profile",
         element: <Profile />,
       },
       {
-        path: "/create-campaign",
+        path: "create-campaign",
         element: <CreateCampaign />,
       },
       {
-        path: "/update-campaign/:campaignId",
+        path: "update-campaign/:campaignId",
         element: <UpdateCampaign />,
       },
       {
-        path: "/campaign-details/:campaignId",
+        path: "campaign-details/:campaignId",
         element: <CampaignDetails />,
       },
       {
-        path: "/withdraw",
+        path: "withdraw",
         element: <Withdraw />,
       },
       {
-        path: "/disconnect",
+        path: "disconnect",
         element: <Disconnect />,
       },
     ],

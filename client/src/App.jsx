@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Sidebar, Navbar, Footer } from "./components";
 
+
 const App = () => {
   return (
     <div className="relative sm:p-8  p-4 bg-[#eaeaea] dark:bg-[#13131a] min-h-screen flex  ">

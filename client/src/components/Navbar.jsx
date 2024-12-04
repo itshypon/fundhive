@@ -6,10 +6,19 @@ import { navlinks } from "../constants";
 import Jazzicon, { jsNumberForAddress } from "react-jazzicon";
 import { ConnectWallet, darkTheme, lightTheme } from "@thirdweb-dev/react";
 import ThemeModes from "./ThemeModes";
+import { useSearch } from "./SearchProvider";
 
 const Navbar = () => {
   const [toggleDrawer, setToggleDrawer] = useState(false);
+  const { handleSearch } = useSearch();
+  const [searchTerm, setSearchTerm] = useState("");
   const { address, themeMode } = useStateContext();
+
+  const handleSearchChange = (e) => {
+    const newSearchTerm = e.target.value;
+    setSearchTerm(newSearchTerm);
+    handleSearch(newSearchTerm);
+  };
 
   return (
     <div className="flex md:flex-row flex-col-reverse justify-between mb-[35px] gap-6">
@@ -17,50 +26,47 @@ const Navbar = () => {
         <input
           type="text"
           placeholder="Search for campaigns"
-          className="flex w-full font-epilogue font-normal text-sm placeholder:text-[#6e7682]  text-black dark:text-white bg-transparent outline-none"
+          value={searchTerm}
+          onChange={handleSearchChange}
+          className="flex w-full font-epilogue font-normal text-sm placeholder:text-[#6e7682] text-black dark:text-white bg-transparent outline-none"
         />
-        <div className="w-[72px] h-full rounded-[20px] bg-[#6F01Ec] flex justify-center items-center cursor-pointer shadow-md">
+        <div 
+          className="w-[72px] h-full rounded-[20px] bg-[#6F01Ec] flex justify-center items-center cursor-pointer shadow-md"
+          onClick={() => handleSearch(searchTerm)}
+        >
           <img
             src={search}
             alt="search"
-            className="w-[18px] h-[18px] object-contain "
+            className="w-[18px] h-[18px] object-contain"
           />
         </div>
       </div>
 
       <div className="sm:flex hidden flex-row justify-end gap-4">
         <ConnectWallet
-          className={
-            "!font-epilogue !bg-[#03dac5] !mr-5 !shadow-md !outline-none !font-semibold"
-          }
-          theme={
-            (themeMode === "Light" &&
-              lightTheme({
-                colors: {
-                  accentButtonBg: "#03dac5",
-                  primaryButtonBg: "#03dac5",
-                  accentText: "#03dac5",
-                },
-              })) ||
-            (themeMode === "Dark" &&
-              darkTheme({
-                colors: {
-                  accentButtonBg: "#03dac5",
-                  primaryButtonBg: "#03dac5",
-                  accentText: "#03dac5",
-                },
-              }))
-          }
-          modalTitle={"FundHive"}
-          modalSize={"wide"}
+          className="!font-epilogue !bg-[#03dac5] !mr-5 !shadow-md !outline-none !font-semibold"
+          theme={themeMode === "Light" ? lightTheme({
+            colors: {
+              accentButtonBg: "#03dac5",
+              primaryButtonBg: "#03dac5",
+              accentText: "#03dac5",
+            },
+          }) : darkTheme({
+            colors: {
+              accentButtonBg: "#03dac5",
+              primaryButtonBg: "#03dac5",
+              accentText: "#03dac5",
+            },
+          })}
+          modalTitle="FundHive"
+          modalSize="wide"
           welcomeScreen={{
             img: {
               src: `${logo}`,
               width: 200,
               height: 200,
             },
-            title:
-              "Welcome To FundHive: A Decentralised CrowdFunding Application",
+            title: "Welcome To FundHive: A Decentralised CrowdFunding Application",
           }}
           modalTitleIconUrl={logo}
           showThirdwebBranding={false}
@@ -76,8 +82,7 @@ const Navbar = () => {
         </NavLink>
       </div>
 
-      {/* small screen navigation */}
-
+      {/* Small screen navigation */}
       <div className="sm:hidden flex justify-between items-center relative">
         <div className="w-14 h-14 rounded-xl bg-[#f0f0f0] dark:bg-[#2c2f32] flex justify-center items-center cursor-pointer shadow-md">
           <NavLink
@@ -130,37 +135,29 @@ const Navbar = () => {
           </ul>
           <div className="flex justify-evenly items-center flex-wrap gap-2 mx-2">
             <ConnectWallet
-              className={
-                "!font-epilogue !bg-[#03dac5] !mr-5 !shadow-md !outline-none !font-semibold"
-              }
-              theme={
-                (themeMode === "Light" &&
-                  lightTheme({
-                    colors: {
-                      accentButtonBg: "#03dac5",
-                      primaryButtonBg: "#03dac5",
-                      accentText: "#03dac5",
-                    },
-                  })) ||
-                (themeMode === "Dark" &&
-                  darkTheme({
-                    colors: {
-                      accentButtonBg: "#03dac5",
-                      primaryButtonBg: "#03dac5",
-                      accentText: "#03dac5",
-                    },
-                  }))
-              }
-              modalTitle={"FundHive"}
-              modalSize={"wide"}
+              className="!font-epilogue !bg-[#03dac5] !mr-5 !shadow-md !outline-none !font-semibold"
+              theme={themeMode === "Light" ? lightTheme({
+                colors: {
+                  accentButtonBg: "#03dac5",
+                  primaryButtonBg: "#03dac5",
+                  accentText: "#03dac5",
+                },
+              }) : darkTheme({
+                colors: {
+                  accentButtonBg: "#03dac5",
+                  primaryButtonBg: "#03dac5",
+                  accentText: "#03dac5",
+                },
+              })}
+              modalTitle="FundHive"
+              modalSize="wide"
               welcomeScreen={{
                 img: {
                   src: `${logo}`,
                   width: 200,
                   height: 200,
                 },
-                title:
-                  "Welcome To FundHive: A Decentralised CrowdFunding Application",
+                title: "Welcome To FundHive: A Decentralised CrowdFunding Application",
               }}
               modalTitleIconUrl={logo}
               showThirdwebBranding={false}
@@ -176,3 +173,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
